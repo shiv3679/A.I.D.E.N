@@ -1,0 +1,23 @@
+.task-list-container {
+    padding: 20px;
+}
+
+.task-list {
+    margin-top: 20px;
+}
+
+.task-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.task-item h3 {
+    margin-top: 0;
+}
+
+.task-item p {
+    margin: 5px 0;
+}

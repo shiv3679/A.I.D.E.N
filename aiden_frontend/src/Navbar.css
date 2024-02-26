@@ -1,0 +1,121 @@
+
+.navbar h1 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none; /* Removes underline from link */
+  }
+  
+  .nav-links {
+    list-style: none; /* Removes bullet points from list */
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none; /* Removes underline from links */
+    margin-left: 1rem;
+  }
+  
+  /* Add more styling as needed */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex; /* This will align the items in a row */
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-link, .user-greeting {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem; /* This controls the spacing between the items */
+  }
+  
+  .user-greeting {
+    margin-left: 2rem; /* Additional spacing before the user greeting */
+  }
+  
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex; /* Align items in a row */
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-left: 20px; /* Add spacing between nav items */
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logout-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-left: 20px; /* Consistent spacing */
+    border-radius: 4px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  
