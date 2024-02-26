@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from './AuthProvider'; // Adjust based on your actual import
-import './Navbar.css';
+import './Navbar.css'; // Ensure this path is correct
 
 function Navbar({ handleLogout, currentUser }) {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">A.I.D.E.N</Link>
-      <ul className="nav-links">
+      <button
+        className={`hamburger ${isNavExpanded ? "is-active" : ""}`}
+        onClick={() => setIsNavExpanded(!isNavExpanded)}
+      >
+        <span>&#9776;</span>
+      </button>
+      <ul className={`nav-links ${isNavExpanded ? "expanded" : ""}`}>
         <li>
           <Link to="/add-task" className="nav-link">Add Task</Link>
         </li>
