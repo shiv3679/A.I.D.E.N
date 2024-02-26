@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { db } from './firebaseConfig'; // Ensure this path is correct
-import { collection, addDoc } from "firebase/firestore"; 
+import { db } from './firebaseConfig'; // Make sure this path matches your project structure
+import { collection, addDoc } from "firebase/firestore";
 import './AddTaskForm.css';
 
 const AddTaskForm = () => {
@@ -10,6 +10,23 @@ const AddTaskForm = () => {
     const [priority, setPriority] = useState('Medium');
     const [status, setStatus] = useState('Not Started');
     const [tags, setTags] = useState('');
+    const [hasSubtasks, setHasSubtasks] = useState(false);
+    const [subtasks, setSubtasks] = useState([{ id: Date.now(), title: '', completed: false }]);
+
+    const handleSubtaskChange = (id, value) => {
+        const updatedSubtasks = subtasks.map(subtask =>
+            subtask.id === id ? { ...subtask, title: value } : subtask
+        );
+        setSubtasks(updatedSubtasks);
+    };
+
+    const addSubtask = () => {
+        setSubtasks([...subtasks, { id: Date.now(), title: '', completed: false }]);
+    };
+
+    const removeSubtask = (id) => {
+        setSubtasks(subtasks.filter(subtask => subtask.id !== id));
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,6 +39,7 @@ const AddTaskForm = () => {
                 priority,
                 status,
                 tags: taskTags,
+                subtasks: hasSubtasks ? subtasks : [],
             });
             console.log("Task added!");
         } catch (error) {
@@ -34,6 +52,8 @@ const AddTaskForm = () => {
         setPriority('Medium');
         setStatus('Not Started');
         setTags('');
+        setHasSubtasks(false);
+        setSubtasks([{ id: Date.now(), title: '', completed: false }]);
     };
 
     return (
@@ -102,6 +122,31 @@ const AddTaskForm = () => {
                         onChange={(e) => setTags(e.target.value)}
                     />
                 </div>
+
+                {/* Subtasks Section */}
+                <div className="form-group">
+                    <label htmlFor="hasSubtasks">Has Subtasks:</label>
+                    <input
+                        type="checkbox"
+                        id="hasSubtasks"
+                        checked={hasSubtasks}
+                        onChange={(e) => setHasSubtasks(e.target.checked)}
+                    />
+                </div>
+                {hasSubtasks && subtasks.map((subtask, index) => (
+                    <div key={subtask.id} className="subtask">
+                        <input
+                            type="text"
+                            placeholder={`Subtask ${index + 1} Title`}
+                            value={subtask.title}
+                            onChange={(e) => handleSubtaskChange(subtask.id, e.target.value)}
+                            required={hasSubtasks}
+                        />
+                        <button type="button" onClick={() => removeSubtask(subtask.id)}>Remove</button>
+                    </div>
+                ))}
+                {hasSubtasks && <button type="button" onClick={addSubtask}>Add Subtask</button>}
+
                 <button type="submit">Add Task</button>
             </form>
         </div>

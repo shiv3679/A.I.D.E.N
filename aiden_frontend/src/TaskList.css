@@ -12,6 +12,11 @@
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.task-item.completed {
+    background-color: #e0ffe0; /* Light green background for completed tasks */
 }
 
 .task-item h3 {
@@ -20,4 +25,44 @@
 
 .task-item p {
     margin: 5px 0;
+}
+
+.task-actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.complete-btn, .delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.complete-btn:hover, .delete-btn:hover {
+    opacity: 0.7;
+}
+
+.complete-btn {
+    color: green;
+}
+
+.delete-btn {
+    color: red;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 3px;
+    margin: 10px 0;
+}
+
+.progress-bar-fill {
+    background-color: #4caf50;
+    height: 20px;
+    border-radius: 18px;
+    transition: width 0.3s ease-in-out;
 }
