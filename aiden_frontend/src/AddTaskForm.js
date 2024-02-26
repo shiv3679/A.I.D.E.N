@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from './firebaseConfig'; // Make sure this path matches your project structure
+import { db } from './firebaseConfig'; // Ensure this path matches your project structure
 import { collection, addDoc } from "firebase/firestore";
 import './AddTaskForm.css';
 
@@ -42,10 +42,14 @@ const AddTaskForm = () => {
                 subtasks: hasSubtasks ? subtasks : [],
             });
             console.log("Task added!");
+            // Reset form fields after successful submission
+            resetForm();
         } catch (error) {
             console.error("Error adding task: ", error);
         }
-        // Reset form fields
+    };
+
+    const resetForm = () => {
         setTitle('');
         setDescription('');
         setDueDate('');
@@ -60,6 +64,7 @@ const AddTaskForm = () => {
         <div className="form-container">
             <form onSubmit={handleSubmit} className="task-form">
                 <h2>Add a New Task</h2>
+                {/* Form inputs and labels */}
                 <div className="form-group">
                     <label htmlFor="title">Title:</label>
                     <input

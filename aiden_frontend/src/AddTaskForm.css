@@ -53,3 +53,53 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.icon-btn {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.add-btn::before {
+    content: '+';
+    display: inline-block;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.delete-btn::before {
+    content: '🗑';
+    display: inline-block;
+    font-size: 20px;
+    color: red;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px; /* Adjust as needed */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure subtask inputs and buttons are aligned nicely */
+.subtask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtask input {
+    flex-grow: 1;
+}
