@@ -14,15 +14,13 @@ function Navbar({ handleLogout, currentUser }) {
       >
         <span>&#9776;</span>
       </button>
-      <ul className={`nav-links ${isNavExpanded ? "expanded" : ""}`}>
-        <li>
-          <Link to="/add-task" className="nav-link">Add Task</Link>
-        </li>
-        <li className="nav-link">Hi, {currentUser.displayName || 'User'}</li>
-        <li>
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
-        </li>
-      </ul>
+      <div className={`nav-links ${isNavExpanded ? "expanded" : ""}`}>
+        <Link to="/" className="nav-link">Tasks</Link> {/* Make sure this is included for navigation */}
+        <Link to="/add-task" className="nav-link">Add Task</Link>
+        <Link to="/profile" className="nav-link">Profile</Link>
+        <span className="nav-link">Hi, {currentUser.displayName || 'User'}</span>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
+      </div>
     </nav>
   );
 }

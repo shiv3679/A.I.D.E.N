@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import TaskList from './TaskList';
 import AddTaskForm from './AddTaskForm';
 import Login from './Login';
+import UserProfile from './UserProfile'; // Import UserProfile
 import { AuthProvider } from './AuthProvider'; // Import AuthProvider
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      <AuthProvider> {/* Ensure AuthProvider is imported and wrapped around your Routes */}
+      <AuthProvider value={{currentUser}}> {/* Ensure AuthProvider correctly passes down the currentUser */}
         <div>
           {currentUser ? (
             <>
@@ -33,6 +34,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<TaskList />} />
                 <Route path="/add-task" element={<AddTaskForm />} />
+                <Route path="/profile" element={<UserProfile />} /> {/* Add route for UserProfile */}
                 <Route path="/login" element={<Navigate to="/" />} />
               </Routes>
             </>

@@ -1,71 +1,78 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: fixed; /* Makes the navbar stay at the top */
+  width: 100%; /* Ensures the navbar spans the entire width */
+  top: 0; /* Positions the navbar at the very top of the viewport */
+  left: 0; /* Aligns the navbar to the left edge of the viewport */
+  z-index: 1000; /* Ensures the navbar stays above other content */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* Increased gap for better spacing */
+}
+
+.nav-link, .logout-btn {
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
   .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1rem; /* Ensures spacing between items */
-  }
-  
-  .nav-link, .logout-btn {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .logout-btn {
-    background-color: #f44336;
-    border: none;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 4px;
-  }
-  
-  .logout-btn:hover {
-    background-color: #d32f2f;
-  }
-  
-  .hamburger {
+    flex-direction: column;
+    background-color: #333;
+    position: fixed; /* Ensures the nav links do not move with page scrolling */
+    right: 0;
+    top: 56px; /* Adjust if your navbar height is different */
+    width: 100%;
     display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+    z-index: 1001; /* Ensures the expanded menu is above other content */
   }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      position: absolute;
-      right: 0;
-      top: 56px; /* Adjust based on the height of your navbar */
-      background-color: #333;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      display: none;
-    }
-  
-    .nav-links.expanded {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: block;
-    }
-    
-    .nav-link, .logout-btn {
-      padding: 10px; /* Adds padding for touch targets */
-    }
+
+  .nav-links.expanded {
+    display: flex;
   }
-  
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-link, .logout-btn {
+    padding: 10px;
+  }
+}
