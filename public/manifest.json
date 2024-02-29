@@ -1,0 +1,25 @@
+{
+  "short_name": "A.I.D.E.N",
+  "name": "Artificial Intelligence Designed for Efficiency and Navigation",
+  "icons": [
+    {
+      "src": "web_logo.webp",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/webp"
+    },
+    {
+      "src": "web_logo.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    },
+    {
+      "src": "web_logo.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
