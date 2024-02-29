@@ -1,9 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"; // Import Firestore
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA9p84YFSaRrWYI5c2Dm4CwmgtJuWTys9g",
   authDomain: "aiden-shiv.firebaseapp.com",
@@ -14,35 +12,25 @@ const firebaseConfig = {
   measurementId: "G-RNTHBZZKJ2"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
-
-// Initialize Firestore
 const db = getFirestore(app);
 
-// Define signInWithGoogle
 const provider = new GoogleAuthProvider();
 const signInWithGoogle = () => signInWithPopup(auth, provider)
   .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // Optional: Update UI or state with user information
+    // Example of how to use the result
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const token = credential.accessToken;
+    // const user = result.user;
+    // Use user info as needed
   }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // Optional: Update UI or log errors
+    // Example of how to handle errors
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // const email = error.email;
+    // const credential = GoogleAuthProvider.credentialFromError(error);
+    // Handle errors as needed
   });
 
-// Export auth, db, and signInWithGoogle for use in your app
 export { auth, db, signInWithGoogle };
