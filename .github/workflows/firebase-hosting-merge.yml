@@ -11,10 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+      # Add a step to change the working directory to aiden_frontend
+      - name: Change working directory
+        run: cd aiden_frontend
+      # Specify the working directory for npm commands
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./aiden_frontend
+      - name: Build
+        run: npm run build
+        working-directory: ./aiden_frontend
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AIDEN_SHIV }}'
           channelId: live
           projectId: aiden-shiv
+          # Specify the folder to deploy
+          publicDirectory: ./aiden_frontend/build
+
