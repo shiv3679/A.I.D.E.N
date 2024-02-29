@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh; /* Full viewport height */
     padding: 20px;
+    margin-top: 60px;
 }
 
 .task-form {
@@ -102,4 +103,56 @@ button:hover {
 
 .subtask input {
     flex-grow: 1;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn::before {
+    content: '+';
+    font-size: 24px;
+    color: #007bff;
+}
+
+.delete-btn::before {
+    content: '🗑';
+    font-size: 24px;
+    color: red;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Ensure there's some space above the submit button */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.subtask {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Creates space between the input and the button */
+    margin-bottom: 10px; /* Space between subtask entries */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Adjust width to prevent overflow */
 }

@@ -1,0 +1,34 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.user-info, .completed-tasks {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.user-details p, .completed-tasks ul {
+    margin: 10px 0;
+}
+
+.completed-tasks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.completed-tasks li {
+    background-color: #e4e4e4;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* Add more styles as needed */

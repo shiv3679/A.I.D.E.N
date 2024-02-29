@@ -1,10 +1,9 @@
 .task-list-container {
     padding: 20px;
+    margin-top: 60px; /* Adjust based on navbar height */
 }
 
-.task-list {
-    margin-top: 20px;
-}
+.task-list {}
 
 .task-item {
     border: 1px solid #ccc;
@@ -12,45 +11,26 @@
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative;
 }
 
 .task-item.completed {
-    background-color: #e0ffe0; /* Light green background for completed tasks */
+    background-color: #e0ffe0;
 }
 
-.task-item h3 {
-    margin-top: 0;
-}
-
-.task-item p {
+.task-item h3, .task-item p {
     margin: 5px 0;
 }
 
 .task-actions {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-.complete-btn, .delete-btn {
+.icon-btn {
     border: none;
     background: none;
     cursor: pointer;
-    margin-left: 10px;
-    font-size: 1.2rem;
-}
-
-.complete-btn:hover, .delete-btn:hover {
-    opacity: 0.7;
-}
-
-.complete-btn {
-    color: green;
-}
-
-.delete-btn {
-    color: red;
 }
 
 .progress-bar {
@@ -65,4 +45,18 @@
     height: 20px;
     border-radius: 18px;
     transition: width 0.3s ease-in-out;
+}
+
+.subtask {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtask .icon-btn {
+    padding: 0;
+}
+
+#delete{
+    color: red;
 }

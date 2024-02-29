@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { db } from './firebaseConfig'; // Ensure this path matches your project structure
+import { db, auth } from './firebaseConfig'; // Ensure auth is imported
 import { collection, addDoc } from "firebase/firestore";
 import './AddTaskForm.css';
 
 const AddTaskForm = () => {
+    // Form state initialization
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState('');
@@ -13,6 +14,7 @@ const AddTaskForm = () => {
     const [hasSubtasks, setHasSubtasks] = useState(false);
     const [subtasks, setSubtasks] = useState([{ id: Date.now(), title: '', completed: false }]);
 
+    // Handlers for form inputs
     const handleSubtaskChange = (id, value) => {
         const updatedSubtasks = subtasks.map(subtask =>
             subtask.id === id ? { ...subtask, title: value } : subtask
@@ -31,8 +33,16 @@ const AddTaskForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const taskTags = tags.split(',').map(tag => tag.trim());
+        const userId = auth.currentUser ? auth.currentUser.uid : null; // Get the current user's UID
+
+        if (!userId) {
+            console.error("No authenticated user found.");
+            return;
+        }
+
         try {
             await addDoc(collection(db, "tasks"), {
+                userId, // Include the userId in the document
                 title,
                 description,
                 dueDate,
@@ -41,14 +51,14 @@ const AddTaskForm = () => {
                 tags: taskTags,
                 subtasks: hasSubtasks ? subtasks : [],
             });
-            console.log("Task added!");
-            // Reset form fields after successful submission
+            console.log("Task added successfully!");
             resetForm();
         } catch (error) {
             console.error("Error adding task: ", error);
         }
     };
 
+    // Function to reset form fields
     const resetForm = () => {
         setTitle('');
         setDescription('');
@@ -59,6 +69,7 @@ const AddTaskForm = () => {
         setHasSubtasks(false);
         setSubtasks([{ id: Date.now(), title: '', completed: false }]);
     };
+
 
     return (
         <div className="form-container">
@@ -73,6 +84,7 @@ const AddTaskForm = () => {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         required
+                        placeholder='Enter a title for the task'
                     />
                 </div>
                 <div className="form-group">
@@ -82,6 +94,7 @@ const AddTaskForm = () => {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
+                        placeholder='Enter a description for the task'
                     />
                 </div>
                 <div className="form-group">
@@ -125,12 +138,13 @@ const AddTaskForm = () => {
                         id="tags"
                         value={tags}
                         onChange={(e) => setTags(e.target.value)}
+                        placeholder='e.g. academics, daily, lifestyle, miscellaneous'
                     />
                 </div>
 
                 {/* Subtasks Section */}
                 <div className="form-group">
-                    <label htmlFor="hasSubtasks">Has Subtasks:</label>
+                <label htmlFor="hasSubtasks">Has Subtasks:</label>
                     <input
                         type="checkbox"
                         id="hasSubtasks"
@@ -147,12 +161,11 @@ const AddTaskForm = () => {
                             onChange={(e) => handleSubtaskChange(subtask.id, e.target.value)}
                             required={hasSubtasks}
                         />
-                        <button type="button" onClick={() => removeSubtask(subtask.id)}>Remove</button>
+                        <button type="button" onClick={() => removeSubtask(subtask.id)} className="icon-btn delete-btn"></button>
                     </div>
                 ))}
-                {hasSubtasks && <button type="button" onClick={addSubtask}>Add Subtask</button>}
-
-                <button type="submit">Add Task</button>
+                {hasSubtasks && <button type="button" onClick={addSubtask} className="icon-btn add-btn"></button>}
+                <button type="submit" className="submit-btn">Add Task</button>
             </form>
         </div>
     );
