@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="logo-aiden.webp" alt="AIDEN Logo" width="200"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">A.I.D.E.N</h1>
 
-## Available Scripts
+<p align="center">
+  <strong>Artificial Intelligence Designed for Efficiency and Navigation</strong>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://aiden-shiv.web.app/"><img src="https://img.shields.io/badge/Live_App-View-blue?style=for-the-badge&logo=appveyor" alt="Live App"></a>
+  <a href="https://github.com/shiv3679/A.I.D.E.N"><img src="https://img.shields.io/github/stars/shiv3679/A.I.D.E.N?style=for-the-badge" alt="GitHub stars"></a>
+  <a href="https://github.com/shiv3679/A.I.D.E.N/issues"><img src="https://img.shields.io/github/issues/shiv3679/A.I.D.E.N?style=for-the-badge" alt="GitHub issues"></a>
+  <a href="https://github.com/shiv3679/A.I.D.E.N/network/members"><img src="https://img.shields.io/github/forks/shiv3679/A.I.D.E.N?style=for-the-badge" alt="GitHub forks"></a>
+  <a href="https://github.com/shiv3679/A.I.D.E.N/blob/main/LICENSE"><img src="https://img.shields.io/github/license/shiv3679/A.I.D.E.N?style=for-the-badge" alt="License"></a>
+</p>
 
-### `npm start`
+## About A.I.D.E.N
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A.I.D.E.N is an ambitious project aiming to simplify your daily task management through the power of artificial intelligence. It learns from your behavior to prioritize tasks efficiently, ensuring that you navigate through your day with enhanced productivity and minimal stress.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Disclaimer on UI
 
-### `npm test`
+The current focus of A.I.D.E.N is to provide a robust and intelligent backend system. The UI is basic and serves the functionality without any bells and whistles. We're dedicated to improving the user experience and interface in future updates, but for now, we appreciate your understanding as we prioritize performance and functionality.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Task management with intelligent prioritization
+- Efficient navigation through daily tasks
+- Learning algorithm that adapts to user behavior
+- Simple and functional user interface
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Quick Start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get started with A.I.D.E.N:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Visit the [Live App](https://aiden-shiv.web.app/).
+2. Create an account or log in.
+3. Start adding your tasks and let A.I.D.E.N manage your day!
 
-### `npm run eject`
+## Feedback
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Your feedback is invaluable to us. If you have any suggestions or encounter any issues, please report them in the [issues section](https://github.com/shiv3679/A.I.D.E.N/issues) of our GitHub repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contribute
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We welcome contributions! Feel free to fork the [repository](https://github.com/shiv3679/A.I.D.E.N) and submit pull requests.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+A.I.D.E.N is released under the [Apache-2.0 License](https://github.com/shiv3679/A.I.D.E.N/blob/main/LICENSE).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+  <sub>© 2024 A.I.D.E.N Team - All Rights Reserved</sub>
+</p>
