@@ -65,3 +65,7 @@ flutter {
 }
 
 dependencies {}
+
+// At the bottom of android/app/build.gradle
+apply plugin: 'com.google.gms.google-services'
+

@@ -1,16 +1,23 @@
+// Project-level build.gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Make sure to use the current versions for your project setup
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+        // Google Services plugin for Firebase
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
-}
-
-rootProject.buildDir = '../build'
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {
